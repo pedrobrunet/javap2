@@ -9,7 +9,6 @@ public class ex01 {
             System.out.println("--- NOVO CADASTRO ---");
 
             System.out.println("DIGITE SEU NOME:");
-
             String nome = entradaUsuario.nextLine();
 
             System.out.println("DIGITE SUA IDADE:");
