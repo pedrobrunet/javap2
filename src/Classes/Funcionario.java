@@ -1,9 +1,9 @@
 package Classes;
 
 public class Funcionario {
-    String nome;
-    int Matricula;
-    double salario;
+    public String nome;
+    public int matricula;
+    public double salario;
 
     public double calcularDesconto (){
         return salario * 0.15;
@@ -12,5 +12,6 @@ public class Funcionario {
     public double salarioLiquido (){
         return salario - calcularDesconto();
     }
+
 
 }
