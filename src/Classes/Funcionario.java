@@ -5,13 +5,17 @@ public class Funcionario {
     public int matricula;
     public double salario;
 
-    public double calcularDesconto (){
-        return salario * 0.15;
+    public Funcionario(String nome, int matricula, double salario) {
+        this.nome = nome;
+        this.matricula = matricula;
+        this.salario = salario;
     }
 
-    public double salarioLiquido (){
-        return salario - calcularDesconto();
+    public double calcularDesconto() {
+        return this.salario * 0.15;
     }
 
-
+    public double salarioLiquido() {
+        return this.salario - this.calcularDesconto();
+    }
 }
