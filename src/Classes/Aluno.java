@@ -18,10 +18,10 @@ public double calculoMedia() {
     public String calculoAprovacao() {
         double media = this.calculoMedia();
 
-        if (media >= 70) {
+        if (media >= 7.0) {
             return "Aprovado";
         }
-        else if (media < 40) {
+        else if (media < 4.0) {
             return "Reprovado";
         }
         else {

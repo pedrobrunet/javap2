@@ -1,11 +1,15 @@
 package aula03;
 import java.util.Scanner;
 import Classes.Aluno;
+import java.util.Locale;
 public class ex02 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        sc.useLocale(Locale.US);
         System.out.println("Digite seu nome:");
         String nome = sc.nextLine();
+
+        System.out.println("Ao inserir a Nota sempre usa ponto - ex: 9.8, 8.3, 9.5");
 
         System.out.println("Nota 1 ");
         double n1 = sc.nextDouble();
