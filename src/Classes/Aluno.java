@@ -1,6 +1,6 @@
 package Classes;
 
-public class Aluno {
+public class Aluno extends Pessoa{
     public String nome;
     public double nota1, nota2, nota3;
 
