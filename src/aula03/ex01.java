@@ -1,16 +1,17 @@
 package aula03;
 
-import Classes.Funcionario;
+// A MUDANÇA PRINCIPAL ESTÁ AQUI: de Classes para model
+import model.Funcionario;
 import java.util.Scanner;
+import java.util.Locale;
 
 public class ex01 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        sc.useLocale(Locale.US);
 
-        System.out.println("--- BEM VINDO A FOLHA SALARIAL ---");
+        System.out.println("--- BEM VINDO À FOLHA SALARIAL ---");
 
-        // 2. Coleta os dados do usuário primeiro
-       // variáveis locais (n, m, s) para guardar temporariamente os valores
         System.out.print("Digite seu nome: ");
         String n = sc.nextLine();
 
@@ -20,19 +21,21 @@ public class ex01 {
         System.out.print("Informe seu salario Bruto: ");
         double s = sc.nextDouble();
 
-        // objeto usando o CONSTRUTOR
-        // n,m,s na posição que passamos na classe
+        // Criando o objeto: Funcionario(nome, matricula, salarioBase)
         Funcionario f1 = new Funcionario(n, m, s);
 
-        // 4. Exibe os resultados acessando os métodos do objeto f1
         System.out.println("\n===============================");
         System.out.println("FOLHA COM DESCONTOS");
         System.out.println("-------------------------------");
-        System.out.println("Matricula: " + f1.matricula);
-        System.out.println("Nome: " + f1.nome);
-        System.out.println("Salario bruto: " + f1.salario);
+
+        // Agora o IntelliJ encontrará esses métodos em model.Funcionario
+        System.out.println("Matricula: " + f1.getMatricula());
+        System.out.println("Nome: " + f1.getNome());
+        System.out.println("Salario bruto: " + f1.getSalarioBase());
         System.out.println("Desconto total (15%): " + f1.calcularDesconto());
-        System.out.println("Salario Liquido a receber: " + f1.salarioLiquido());
+
+        // Este método vem da implementação da interface Remuneravel
+        System.out.println("Salario Liquido a receber: " + f1.getSalarioLiquido());
 
         sc.close();
     }

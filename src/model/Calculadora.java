@@ -1,4 +1,4 @@
-package Classes;
+package model;
 
 public class Calculadora {
     public double n1,n2;

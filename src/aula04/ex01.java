@@ -1,12 +1,15 @@
 package aula04;
 
-import Classes.Funcionario2;
+import model.Funcionario;
 import java.util.Scanner;
+import java.util.Locale;
 
 public class ex01 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Funcionario2 f = new Funcionario2();
+        sc.useLocale(Locale.US); // Garante que aceite ponto em valores decimais
+
+        Funcionario f = new Funcionario();
 
         System.out.println("--- Calculadora de Salário Horista ---");
 
@@ -19,15 +22,19 @@ public class ex01 {
         System.out.println("Digite quantas horas você trabalhou:");
         f.setHorasTrabalhadas(sc.nextInt());
 
-        // Processamento
-        f.calculoSalario();
+        // CORREÇÃO 1: O nome do método na classe unificada é calcularSalarioHorista()
+        f.calcularSalarioHorista();
 
         System.out.println("\n-----------------------------");
         System.out.println("--------- RESULTADO ---------");
         System.out.println("Funcionário: " + f.getNome());
-        System.out.println("Total a receber: R$ " + f.getSalario());
+
+        // CORREÇÃO 2: O método para pegar o valor base é getSalarioBase()
+        // Ou, se quiser o valor final com descontos, use getSalarioLiquido()
+        System.out.printf("Total a receber (Bruto): R$ %.2f%n", f.getSalarioBase());
+        System.out.printf("Total a receber (Líquido): R$ %.2f%n", f.getSalarioLiquido());
         System.out.println("-----------------------------");
 
-        sc.close(); // Boa prática fechar o scanner
+        sc.close();
     }
 }

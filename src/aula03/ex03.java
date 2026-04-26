@@ -2,7 +2,7 @@ package aula03;
 
 import java.util.Scanner;
 import java.util.Locale;
-import Classes.Calculadora;
+import model.Calculadora;
 
 public class ex03 {
     public static void main(String[] args) {

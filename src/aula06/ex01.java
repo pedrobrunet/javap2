@@ -1,8 +1,8 @@
 package aula06;
 import java.util.Scanner;
 
-import Classes.Cirurgiao;
-import Classes.ClinicoGeral;
+import model.Cirurgiao;
+import model.ClinicoGeral;
 
 
 public class ex01{

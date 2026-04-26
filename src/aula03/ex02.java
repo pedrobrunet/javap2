@@ -1,11 +1,14 @@
 package aula03;
+
 import java.util.Scanner;
-import Classes.Aluno;
+import model.Aluno;
 import java.util.Locale;
+
 public class ex02 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         sc.useLocale(Locale.US);
+
         System.out.println("Digite seu nome:");
         String nome = sc.nextLine();
 
@@ -20,14 +23,15 @@ public class ex02 {
         System.out.println("Nota 3 ");
         double n3 = sc.nextDouble();
 
-        Aluno a1 = new Aluno(nome, n1, n2, n3 );
+        // Criando o aluno com a nova estrutura (Nome, Matricula, Nota1, Nota2, Nota3)
+        Aluno a1 = new Aluno(nome, 0, n1, n2, n3);
 
-        System.out.println("Boletim:");
+        System.out.println("\nBoletim:");
         System.out.println("------------------");
-        System.out.println("Nome do aluno: "+ a1.nome);
-        System.out.printf("Média Final: %.2f %n",+ a1.calculoMedia());
-        System.out.println("Situação: "+ a1.calculoAprovacao());
+        System.out.println("Nome do aluno: " + a1.getNome());
+        System.out.printf("Média Final: %.2f %n", a1.calcularMedia());
+        System.out.println("Situação: " + a1.calcularAprovacao());
 
-
-    }
-}
+        sc.close();
+    } // Fecha o método main
+} // Fecha a classe ex02

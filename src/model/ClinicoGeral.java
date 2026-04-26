@@ -1,4 +1,4 @@
-package Classes;
+package model;
 
 public class ClinicoGeral extends Medico {
     private Boolean atendeEmCasa;

@@ -1,14 +1,17 @@
 package aula05;
 
-import Classes.Aluno1;
-import Classes.Disciplina;
-import Classes.Professor;
+// IMPORTANTE: Mudamos de "Classes" para "model"
+import model.Aluno;
+import model.Disciplina;
+import model.Professor;
 import java.util.Scanner;
+import java.util.Locale;
 
 public class ex01 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Scanner sc2 = new Scanner(System.in);
+        sc.useLocale(Locale.US);
+
         int opcao;
         Disciplina d = new Disciplina();
 
@@ -20,12 +23,11 @@ public class ex01 {
             System.out.print("Escolha uma opção: ");
 
             opcao = sc.nextInt();
-            sc.nextLine(); // Limpa o buffer após ler o número da opção
+            sc.nextLine();
 
             switch (opcao) {
                 case 1:
-                    Aluno1 a = new Aluno1();
-
+                    Aluno a = new Aluno();
 
                     System.out.println("Digite o nome do aluno:");
                     a.setNome(sc.nextLine());
@@ -45,7 +47,8 @@ public class ex01 {
 
                     System.out.print("Terceira nota: ");
                     a.setNota3(sc.nextDouble());
-                    sc.nextLine(); // Adicione isso para limpar o buffer do Enter
+                    sc.nextLine();
+
                     d.setA(a);
 
                     System.out.println("\n--------- DADOS DO ALUNO ---------");
@@ -54,6 +57,7 @@ public class ex01 {
                     System.out.println("Matricula: " + a.getMatricula());
                     System.out.println("N1: " + a.getNota1() + " | N2: " + a.getNota2() + " | N3: " + a.getNota3());
                     System.out.printf("Média: %.2f%n", a.calcularMedia());
+                    System.out.println("Situação: " + a.calcularAprovacao());
                     break;
 
                 case 2:
@@ -69,6 +73,7 @@ public class ex01 {
 
                     System.out.println("Digite o salário:");
                     p.setSalario(sc.nextDouble());
+
                     d.setP(p);
 
                     System.out.println("\n--------- DADOS DO PROFESSOR ---------");
@@ -89,6 +94,6 @@ public class ex01 {
 
         } while (opcao != 0);
 
-        sc.close(); // Boa prática fechar o scanner ao encerrar
+        sc.close();
     }
 }

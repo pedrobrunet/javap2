@@ -1,4 +1,4 @@
-package Classes;
+package model;
 
 public class Cirurgiao extends Medico {
 
